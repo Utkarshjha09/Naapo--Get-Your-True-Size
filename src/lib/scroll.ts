@@ -10,8 +10,11 @@ export function startSmoothScroll() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return () => {}
   lenis = new Lenis({
     autoRaf: true,
+    // how quickly the page catches up with the wheel: below about 0.1 the page trails the wheel and reads as lag
     lerp: 0.12,
     smoothWheel: true,
+    // distance per wheel notch or trackpad swipe: 1 is the browser's own; this is what makes scrolling slower
+    wheelMultiplier: 0.75,
     // touch keeps the phone's own momentum scrolling
     syncTouch: false,
     // native scrolling inside the size-chart table and any overflow container

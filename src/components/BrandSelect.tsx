@@ -122,7 +122,7 @@ export function BrandSelect({
         }`}
       >
         {selected ? (
-          <BrandLogo brand={selected} size="sm" />
+          <BrandLogo brand={selected} size="sm" eager />
         ) : (
           <span aria-hidden className="grid size-9 shrink-0 place-items-center rounded-[8px] border border-dashed border-line text-muted">
             ?

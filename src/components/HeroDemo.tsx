@@ -30,7 +30,7 @@ export function HeroDemo() {
   })
 
   return (
-    <div className="rounded-[10px] border border-line bg-paper/95 p-4 shadow-[0_18px_40px_-24px_rgba(27,25,22,0.45)] backdrop-blur-sm">
+    <div className="rounded-[10px] border border-line bg-paper p-4 shadow-[0_18px_40px_-24px_rgba(27,25,22,0.45)]">
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-baseline gap-3">
           <p className="font-display text-[40px] leading-none tabular-nums">

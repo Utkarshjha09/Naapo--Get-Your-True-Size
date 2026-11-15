@@ -1,6 +1,7 @@
 import { Suspense, lazy, useEffect } from 'react'
 import { useLocation } from './lib/router'
 import { startSmoothScroll } from './lib/scroll'
+import { warmLogos } from './lib/warmLogos'
 import { Footer, Header } from './components/Layout'
 import { BrandSearchHost } from './components/BrandSearch'
 import Home from './pages/Home'
@@ -12,6 +13,7 @@ const BrandPage = lazy(() => import('./pages/BrandPage'))
 export default function App() {
   const { path } = useLocation()
   useEffect(() => startSmoothScroll(), [])
+  useEffect(() => warmLogos(), [])
 
   const brand = /^\/brands\/([\w-]+)\/?$/.exec(path)?.[1]
 

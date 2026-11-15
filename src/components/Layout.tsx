@@ -105,7 +105,8 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-40 border-b bg-paper/90 backdrop-blur-md transition-[border-color] duration-300 ${
+      // solid, not blurred: a backdrop blur is redrawn on every scroll frame and was a main cause of jank
+      className={`sticky top-0 z-40 border-b bg-paper/[0.97] transition-[border-color] duration-300 ${
         scrolled || open ? 'border-line' : 'border-transparent'
       }`}
     >
@@ -257,6 +258,17 @@ export function Footer() {
             product · Photographs from Unsplash
           </p>
           <p>Brand names belong to their owners. Sizes are approximate.</p>
+          <p className="w-full sm:w-auto">
+            Designed and built by{' '}
+            <a
+              href="https://utkarshjha.me"
+              target="_blank"
+              rel="noopener"
+              className="link-underline font-medium text-ink"
+            >
+              Utkarsh Jha
+            </a>
+          </p>
         </div>
       </div>
     </footer>

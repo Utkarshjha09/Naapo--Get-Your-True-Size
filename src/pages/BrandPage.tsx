@@ -492,7 +492,7 @@ export default function BrandPage({ id }: { id: string }) {
               {brand.origin} · {listWords(brand.kinds)} size chart
             </p>
             <div className="mt-5 flex items-center gap-4 md:gap-6">
-              <BrandLogo brand={brand} size="xl" className="max-sm:size-16" />
+              <BrandLogo brand={brand} size="xl" className="max-sm:size-16" eager />
               <h1 className="min-w-0 break-words font-display text-[clamp(44px,11vw,112px)] leading-[0.9] tracking-[-0.02em]">
                 {brand.name}
               </h1>

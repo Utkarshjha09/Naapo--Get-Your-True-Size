@@ -220,6 +220,7 @@ ${footwearOnly.map(brandLine).join('\n')}
 
 - [About Trivasite](${TRIVASITE_ABOUT}): the team behind ${SITE_NAME}, for corrections, a brand's official chart, or a brand to add.
 - [Trivasite](${TRIVASITE}): the main Trivasite website.
+- [Utkarsh Jha](https://utkarshjha.me): designer and developer of ${SITE_NAME}.
 
 ## Optional
 

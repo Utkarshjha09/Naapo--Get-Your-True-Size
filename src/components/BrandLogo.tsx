@@ -13,11 +13,25 @@ const initials = (name: string) =>
     .map((w) => w[0].toUpperCase())
     .join('')
 
+/** Rendered width of each tile in CSS px, so the browser reserves the space before the file arrives. */
+const PX = { xs: 28, sm: 36, md: 44, lg: 64, xl: 80 }
+
 /**
  * The brand's logo on a white tile, from public/logos. A brand without a logo file gets its
- * initials, set in the display face, on the same tile.
+ * initials, set in the display face, on the same tile. `eager` is for logos that are on screen
+ * early (the brand grid, a brand page's own logo); every other logo loads as it scrolls in.
  */
-export function BrandLogo({ brand, size = 'sm', className = '' }: { brand: Brand; size?: keyof typeof SIZES; className?: string }) {
+export function BrandLogo({
+  brand,
+  size = 'sm',
+  className = '',
+  eager = false,
+}: {
+  brand: Brand
+  size?: keyof typeof SIZES
+  className?: string
+  eager?: boolean
+}) {
   const src = LOGOS[brand.id]
   return (
     <span
@@ -28,7 +42,9 @@ export function BrandLogo({ brand, size = 'sm', className = '' }: { brand: Brand
         <img
           src={src}
           alt=""
-          loading="lazy"
+          width={PX[size]}
+          height={PX[size]}
+          loading={eager ? 'eager' : 'lazy'}
           decoding="async"
           className={`size-full object-contain ${src.endsWith('.svg') ? 'p-[18%]' : 'p-[10%]'}`}
         />

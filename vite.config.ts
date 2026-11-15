@@ -52,8 +52,16 @@ function seo(): Plugin {
         res.end(fs.readFileSync(page404))
       })
     },
-    transformIndexHtml(html) {
-      return html.split('%SITE_URL%').join(SITE_URL)
+    transformIndexHtml(html, ctx) {
+      html = html.split('%SITE_URL%').join(SITE_URL)
+      // on build, preload the two fonts the first screen uses, so text settles in its real face early
+      const fonts = Object.keys(ctx.bundle ?? {}).filter((f) =>
+        /instrument-(sans-latin-400|serif-latin-400)-normal-.*\.woff2$/.test(f),
+      )
+      const links = fonts
+        .map((f) => `<link rel="preload" href="/${f}" as="font" type="font/woff2" crossorigin />`)
+        .join('\n    ')
+      return links ? html.replace('</title>', `</title>\n    ${links}`) : html
     },
   }
 }

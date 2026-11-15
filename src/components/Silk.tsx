@@ -222,7 +222,9 @@ export function Silk({
 
     const resize = () => {
       const { width, height } = el.getBoundingClientRect()
-      const dpr = Math.min(window.devicePixelRatio || 1, width < 640 ? 1 : 1.5)
+      // the cloth is soft gradients, so it is drawn at 3/4 of CSS resolution and stretched: about a quarter of
+      // the pixels it used to draw at 1.5x, with no visible difference, and far less work for the GPU while scrolling
+      const dpr = Math.min(window.devicePixelRatio || 1, 1) * 0.75
       renderer.setPixelRatio(dpr)
       renderer.setSize(width, height, false)
       uniforms.u_res.value.set(Math.max(1, width * dpr), Math.max(1, height * dpr))
