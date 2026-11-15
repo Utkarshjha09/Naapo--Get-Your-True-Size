@@ -4,7 +4,7 @@
 
 naapo is a size comparison tool for Indian shoppers. Tell it the size you wear at one brand, or give it one body measurement, and it shows the size to buy at every other brand: clothing, innerwear, bras and footwear for men, women, boys, girls and kids.
 
-It covers **146 Indian and international brands**, from Roadster, Snitch, Zudio and Libas to Levi's, H&M, Nike and Bata. naapo is a [Trivasite](https://www.trivasite.co.in/) product.
+It covers **162 Indian and international brands**, from Roadster, Snitch, Zudio and Libas to Levi's, H&M, Nike and Bata. naapo is a [Trivasite](https://www.trivasite.co.in/) product.
 
 ---
 
@@ -54,6 +54,7 @@ Where naapo has read a brand's **official** size chart from its own website, the
 - Marks & Spencer
 - Jockey
 - Clovia
+- Rupa and Rupa Frontline (men's briefs, trunks and vests, from Rupa's product catalogue)
 - XYXX
 - Coitonic
 - Fuaark
@@ -135,7 +136,7 @@ To test the speed of the site, use `npm run build` and `npm run preview`, not `n
 │   ├── main.tsx             # entry: fonts, global CSS, Motion setup, mounts <App />
 │   ├── App.tsx              # routes: /, /brands/:id, anything else → not found
 │   ├── index.css            # Tailwind theme (colours, fonts), global styles, hidden scrollbars
-│   ├── data.ts              # ALL size data: groups, items, base charts, 146 brands,
+│   ├── data.ts              # ALL size data: groups, items, base charts, 162 brands,
 │   │                        # official charts, size matching and brand-to-brand conversion
 │   ├── logos.ts             # brand id → logo file
 │   │
@@ -217,7 +218,7 @@ Everything below is generated from `src/data.ts` on every build, so it always ma
 
 | File | Purpose |
 |---|---|
-| `/sitemap.xml` | The home page and all 146 brand pages |
+| `/sitemap.xml` | The home page and all 162 brand pages |
 | `/robots.txt` | Lets every crawler in, including the AI crawlers (GPTBot, ClaudeBot, PerplexityBot and others), and points to the sitemap and `llms.txt` |
 | `/llms.txt` (also `/llm.txt`) | A summary for AI assistants, in the [llms.txt](https://llmstxt.org) format |
 | `/llms-full.txt` | Every size at every brand, with its body range in cm |
@@ -260,7 +261,7 @@ To judge real speed, always use `npm run build` + `npm run preview` (or the live
 
 ## Handling heavy traffic
 
-naapo is a **fully static site**: there is no server code, API or database. Every page, including all 146 brand pages, is a ready-made file served from the host's CDN, which copies it to servers around the world. Thousands of visitors a minute just means thousands of file downloads, which a CDN handles without slowing down. There is nothing that can crash or run out of memory.
+naapo is a **fully static site**: there is no server code, API or database. Every page, including all 162 brand pages, is a ready-made file served from the host's CDN, which copies it to servers around the world. Thousands of visitors a minute just means thousands of file downloads, which a CDN handles without slowing down. There is nothing that can crash or run out of memory.
 
 What does grow with traffic is **bandwidth**, so each visit is kept small. These figures were measured on the production build on a phone:
 

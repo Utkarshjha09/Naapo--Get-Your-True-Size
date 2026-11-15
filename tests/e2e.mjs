@@ -53,11 +53,11 @@ try {
 
   // ---------- flows ----------
   await size(1280, 900)
-  await check('home loads with headline and 146 brands', async () => {
+  await check('home loads with headline and 162 brands', async () => {
     await go('/')
     const h1 = await ev(`document.querySelector('h1').textContent.replace(/\\s+/g, ' ').trim()`)
     expect(/Same you, every brand/i.test(h1), 'h1 is ' + h1)
-    const eyebrow = await ev(`document.body.textContent.includes('Size comparison for 146 brands')`)
+    const eyebrow = await ev(`document.body.textContent.includes('Size comparison for 162 brands')`)
     expect(eyebrow, 'brand count missing')
     return h1
   })

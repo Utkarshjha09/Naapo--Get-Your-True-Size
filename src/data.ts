@@ -571,19 +571,29 @@ const COATS = [
   'peter-england', 'arrow', 'superdry', 'jack-jones',
 ]
 /** Labels that make thermal wear. */
-const THERMALS = ['jockey', 'uniqlo', 'lux-cozi', 'dollar', 'rupa', 'decathlon', 'ms', 'max', 'zudio', 'monte-carlo', 'wildcraft', 'vip']
+const THERMALS = [
+  'jockey', 'uniqlo', 'lux-cozi', 'dollar', 'rupa', 'decathlon', 'ms', 'max', 'zudio', 'monte-carlo', 'wildcraft', 'vip',
+  'dixcy-scott', 'bodycare', 'rupa-frontline',
+]
 /** Men's and boys' innerwear: vests, briefs and trunks, boxers. */
 const INNER_MEN = [
   'jockey', 'van-heusen', 'calvin-klein', 'tommy', 'uspa', 'uniqlo', 'hm', 'ms', 'zudio', 'max', 'lux-cozi', 'dollar', 'rupa',
   'vip', 'xyxx', 'damensch', 'peter-england', 'allen-solly', 'westside', 'pantaloons', 'mothercare',
+  'macroman', 'amul-macho', 'rupa-frontline', 'dixcy-scott', 'amul-comfy', 'shera-gold', 'vimal', 'bummer', 'ramraj', 'bodycare',
 ]
 /** Labels that make boxers without the rest of the innerwear range. */
 const BOXERS = ['bewakoof', 'souled-store', 'snitch', 'nobero', 'beyoung']
 /** Women's and girls' innerwear: bras, panties, camisoles and slips. */
 /** Men's long trunks and boxer briefs. */
-const LONG_TRUNKS = ['jockey', 'xyxx', 'damensch', 'calvin-klein', 'uspa', 'van-heusen', 'tommy', 'hm', 'ms', 'uniqlo']
+const LONG_TRUNKS = [
+  'jockey', 'xyxx', 'damensch', 'calvin-klein', 'uspa', 'van-heusen', 'tommy', 'hm', 'ms', 'uniqlo',
+  'macroman', 'bummer', 'dixcy-scott', 'amul-macho', 'rupa-frontline',
+]
 /** Girls' innerwear: panties and beginner bras. */
-const KIDS_INNER_GIRLS = ['jockey', 'zivame', 'clovia', 'hm', 'ms', 'zudio', 'max', 'mothercare', 'lux-cozi', 'westside', 'pantaloons']
+const KIDS_INNER_GIRLS = [
+  'jockey', 'zivame', 'clovia', 'hm', 'ms', 'zudio', 'max', 'mothercare', 'lux-cozi', 'westside', 'pantaloons', 'bodycare',
+  'rupa-softline',
+]
 const ALL_BRAS: Apparel[] = ['tshirtbra', 'pushup', 'sportsbra', 'bralette', 'minimizer', 'strapless', 'nursing']
 const ALL_PANTIES: Apparel[] = ['bikini', 'hipster', 'fullbrief', 'boyshorts', 'thong']
 /** The bra styles each label sells. Sportswear labels not listed here sell sports bras only. */
@@ -604,6 +614,14 @@ const BRA_STYLES: Record<string, Apparel[]> = {
   max: ['tshirtbra', 'sportsbra'],
   pantaloons: ['tshirtbra', 'sportsbra'],
   'lux-cozi': ['tshirtbra'],
+  shyaway: ALL_BRAS,
+  prettysecrets: ['tshirtbra', 'pushup', 'sportsbra', 'bralette', 'strapless'],
+  groversons: ['tshirtbra', 'pushup', 'sportsbra', 'minimizer', 'strapless', 'nursing'],
+  lovable: ['tshirtbra', 'pushup', 'sportsbra', 'minimizer', 'strapless'],
+  'rupa-softline': ['tshirtbra', 'sportsbra', 'minimizer'],
+  'inner-sense': ['tshirtbra', 'sportsbra', 'bralette', 'nursing'],
+  bodycare: ['tshirtbra', 'sportsbra', 'minimizer'],
+  bummer: ['bralette'],
 }
 /** The panty styles each label sells. */
 const PANTIES: Record<string, Apparel[]> = {
@@ -623,10 +641,19 @@ const PANTIES: Record<string, Apparel[]> = {
   max: ['bikini', 'hipster', 'fullbrief'],
   pantaloons: ['bikini', 'hipster', 'fullbrief'],
   'lux-cozi': ['bikini', 'hipster', 'fullbrief'],
+  shyaway: ALL_PANTIES,
+  prettysecrets: ['bikini', 'hipster', 'boyshorts', 'thong'],
+  groversons: ['bikini', 'hipster', 'fullbrief'],
+  lovable: ['bikini', 'hipster', 'fullbrief'],
+  'rupa-softline': ['bikini', 'hipster', 'fullbrief'],
+  'inner-sense': ['bikini', 'hipster', 'fullbrief', 'boyshorts'],
+  bodycare: ['bikini', 'hipster', 'fullbrief'],
+  bummer: ['bikini', 'hipster', 'boyshorts'],
 }
 const INNER_WOMEN = [
   'jockey', 'zivame', 'clovia', 'amante', 'enamor', 'triumph', 'hm', 'ms', 'uniqlo', 'zudio', 'max', 'calvin-klein', 'van-heusen',
   'westside', 'pantaloons', 'lux-cozi', 'mothercare',
+  'shyaway', 'prettysecrets', 'groversons', 'lovable', 'rupa-softline', 'inner-sense', 'bodycare',
 ]
 
 /** Ethnic labels: kurtis, kurtas and palazzos, no jeans or t-shirts. */
@@ -799,6 +826,24 @@ export const BRANDS: Brand[] = [
   b('amante', 'Amante', IN, 'w', { i: 0 }),
   b('enamor', 'Enamor', IN, 'w', { i: 0 }),
   b('triumph', 'Triumph', 'Germany', 'w', { i: -0.5 }),
+
+  // innerwear labels added on request (men's and women's)
+  b('macroman', 'Macroman M-Series', IN, 'm', { i: -0.5 }),
+  b('amul-macho', 'Amul Macho', IN, 'm', { i: 0.5 }),
+  b('rupa-frontline', 'Rupa Frontline', IN, 'mk', { i: 0 }),
+  b('dixcy-scott', 'Dixcy Scott', IN, 'mk', { i: 0 }),
+  b('amul-comfy', 'Amul Comfy', IN, 'm', { i: 0.5 }, undefined, { not: ['boxers'] }),
+  b('shera-gold', 'Shera Gold', IN, 'm', { i: 0.5 }, undefined, { not: ['briefs', 'trunks', 'boxers'] }),
+  b('vimal', 'Vimal', IN, 'm', { i: 0.5 }, undefined, { not: ['trunks', 'boxers'] }),
+  b('bummer', 'Bummer', IN, 'mw', { i: -0.5 }, undefined, { not: ['vests', 'camisoles'] }),
+  b('ramraj', 'Ramraj Cotton', IN, 'mk', { i: 0.5 }, undefined, { not: ['boxers'] }),
+  b('bodycare', 'Bodycare', IN, 'mwk', { i: 0 }),
+  b('shyaway', 'Shyaway', IN, 'w', { i: 0 }),
+  b('prettysecrets', 'PrettySecrets', IN, 'w', { i: -0.5 }),
+  b('groversons', 'Groversons Paris Beauty', IN, 'w', { i: 0 }),
+  b('lovable', 'Lovable', IN, 'w', { i: 0 }),
+  b('rupa-softline', 'Rupa Softline', IN, 'wk', { i: 0 }),
+  b('inner-sense', 'Inner Sense', IN, 'w', { i: 0 }),
   b('fort-collins', 'Fort Collins', IN, 'mw', { w: 1 }),
   b('wildcraft', 'Wildcraft', IN, 'mwk', { w: 0.5 }, [0, 'UK', ['sports', 'boots', 'sandals']]),
 
@@ -869,6 +914,21 @@ const CLOVIA_BANDS: Range[] = [
   { label: '42', min: 94, max: 99 },
   { label: '44', min: 99, max: 104 },
 ]
+/**
+ * Rupa Frontline product catalogue (Dec 2024): every product page prints its sizes in cm, the wearer's
+ * waist for briefs, drawers and trunks and the chest for vests, 5 cm apart.
+ */
+const RUPA = 'https://rupa.co.in/frontline_catalouge/pdf/RFL-Catalogue-dec24.pdf'
+const RUPA_WAIST = fromPoints(['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'], [75, 80, 85, 90, 95, 100, 105, 110], 'cm')
+const RUPA_VESTS = fromPoints(['2XS', 'XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL'], [70, 75, 80, 85, 90, 95, 100, 105, 110], 'cm')
+const RUPA_NOTE = 'Rupa prints one cm size per label; each size covers 2.5 cm either side'
+const rupaCharts = (): OfficialChart[] => [
+  { audience: 'men', garment: 'briefs', source: RUPA, rows: RUPA_WAIST, note: RUPA_NOTE },
+  { audience: 'men', garment: 'trunks', source: RUPA, rows: RUPA_WAIST, note: RUPA_NOTE },
+  { audience: 'men', garment: 'longtrunks', source: RUPA, rows: RUPA_WAIST, note: RUPA_NOTE },
+  { audience: 'men', garment: 'vests', source: RUPA, rows: RUPA_VESTS, note: RUPA_NOTE },
+]
+
 /** XYXX size guide: briefs and trunks by waist (cm), vests by chest (inches). */
 const XYXX = 'https://www.xyxxcrew.com/pages/size-guide'
 const XYXX_WAIST: Range[] = [
@@ -918,6 +978,8 @@ const OFFICIAL: Record<string, OfficialChart[]> = {
   // band size by underbust in cm, as published (the cup comes from the overbust)
   jockey: BAND_BRAS.map((garment) => ({ audience: 'women' as Audience, garment, source: JOCKEY_BRAS, rows: JOCKEY_BANDS })),
   clovia: BAND_BRAS.map((garment) => ({ audience: 'women' as Audience, garment, source: CLOVIA_BRAS, rows: CLOVIA_BANDS })),
+  rupa: rupaCharts(),
+  'rupa-frontline': rupaCharts(),
   xyxx: [
     { audience: 'men', garment: 'briefs', source: XYXX, rows: XYXX_WAIST },
     { audience: 'men', garment: 'trunks', source: XYXX, rows: XYXX_WAIST },
