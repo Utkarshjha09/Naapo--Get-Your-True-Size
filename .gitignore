@@ -1,0 +1,35 @@
+# dependencies
+node_modules/
+
+# build output and caches
+dist/
+.vite/
+*.tsbuildinfo
+.eslintcache
+
+# logs
+*.log
+npm-debug.log*
+
+# environment files (keep an example if you add one)
+.env*
+!.env.example
+
+# hosting CLIs (project ids, local settings)
+.vercel/
+.netlify/
+
+# test and audit output
+tests/responsive-report/
+.taste-skill/
+lighthouse-*.html
+lighthouse-*.json
+
+# editors and OS files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
