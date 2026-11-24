@@ -73,7 +73,7 @@ Every other chart is an **estimate** of the brand's typical fit, measured agains
 | Styling | [Tailwind CSS 4](https://tailwindcss.com) |
 | Motion | [Motion](https://motion.dev) (`motion/react`) and [Lenis](https://lenis.darkroom.engineering) smooth scrolling |
 | 3D | [three.js](https://threejs.org): a silk shader in the closing section, loaded only when it's near the screen |
-| Fonts | Instrument Sans and Instrument Serif, self-hosted with [Fontsource](https://fontsource.org) |
+| Fonts | Archivo (headlines) and Geist (body), Google Fonts self-hosted with [Fontsource](https://fontsource.org) |
 | Testing | ESLint, a headless-Chrome end-to-end suite with [axe-core](https://github.com/dequelabs/axe-core) accessibility scans, and a responsive layout audit |
 | Hosting | Any static host: Cloudflare Pages or Netlify (`public/_headers`), or Vercel (`vercel.json`) |
 

@@ -15,7 +15,7 @@ export function NotFound({ path, brand = false }: { path: string; brand?: boolea
 
   return (
     <main id="main" className="mx-auto flex min-h-[70svh] max-w-[1240px] 2xl:max-w-[1400px] flex-col items-start justify-center px-5 md:px-8">
-      <p className="text-xs uppercase tracking-[0.18em] text-muted">{brand ? 'Brands' : 'Not found'}</p>
+      <p className="text-[13px] font-medium text-muted">{brand ? 'Brands' : 'Not found'}</p>
       <h1 className="mt-4 font-display text-[clamp(40px,10vw,56px)] leading-none">
         {brand ? "We don't chart that brand yet" : "We couldn't find that page"}
       </h1>

@@ -165,7 +165,7 @@ const FALLBACK =
   'linear-gradient(140deg, #4a1912 0%, #6b261c 24%, #8e3a2d 36%, #6b261c 50%, #4a1912 64%, #6b261c 80%, #87382b 92%, #6b261c 100%)'
 
 export function Silk({
-  color = '#7b2d22',
+  color = '#b8321d',
   calmAt = [0.3, 0.5],
   className = '',
 }: {

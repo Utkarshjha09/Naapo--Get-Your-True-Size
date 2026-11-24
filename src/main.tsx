@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom/client'
 import { LazyMotion, domMax } from 'motion/react'
 import App from './App'
 // fonts are served with the site (latin subset), so nothing waits on a third-party font host
-import '@fontsource/instrument-sans/latin-400.css'
-import '@fontsource/instrument-sans/latin-500.css'
-import '@fontsource/instrument-sans/latin-600.css'
-import '@fontsource/instrument-serif/latin-400.css'
-import '@fontsource/instrument-serif/latin-400-italic.css'
+// Archivo (weight + width axes) for headlines, Geist for everything else; browsers fetch only the latin file
+import '@fontsource-variable/archivo/wdth.css'
+import '@fontsource-variable/geist/wght.css'
 import 'lenis/dist/lenis.css'
 import './index.css'
 

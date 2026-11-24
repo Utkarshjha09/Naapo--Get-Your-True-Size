@@ -327,7 +327,7 @@ function Compare({ brand, cat, unit }: { brand: Brand; cat: Category; unit: Unit
       </div>
 
       <div className="min-w-0 rounded-[10px] bg-ink p-5 text-paper md:p-8">
-        <p className="text-xs uppercase tracking-[0.14em] text-paper/60">
+        <p className="text-[13px] font-medium text-paper/60">
           Your {brand.name} {gName} size
         </p>
         <p className="mt-3 font-display text-[clamp(56px,14vw,104px)] leading-[0.9] tabular-nums" aria-live="polite">
@@ -381,7 +381,7 @@ function Compare({ brand, cat, unit }: { brand: Brand; cat: Category; unit: Unit
         </div>
 
         <div className="mt-8">
-          <p className="text-xs uppercase tracking-[0.14em] text-paper/60">
+          <p className="text-[13px] font-medium text-paper/60">
             The same fit at {everywhere.length} other brands
           </p>
           <ul className="mt-4 grid grid-cols-1 gap-x-6 min-[420px]:grid-cols-2 xl:grid-cols-3">
@@ -488,7 +488,7 @@ export default function BrandPage({ id }: { id: string }) {
         </nav>
         <div className="mt-8 grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-end">
           <div className="min-w-0">
-            <p className="text-xs uppercase tracking-[0.18em] text-muted">
+            <p className="text-[13px] font-medium text-muted">
               {brand.origin} · {listWords(brand.kinds)} size chart
             </p>
             <div className="mt-5 flex items-center gap-4 md:gap-6">
@@ -525,7 +525,7 @@ export default function BrandPage({ id }: { id: string }) {
         <div className="mx-auto max-w-[1240px] 2xl:max-w-[1400px] px-5 py-16 md:px-8 md:py-24">
           <div className="grid gap-8 lg:grid-cols-[1fr_440px] lg:items-end">
             <div>
-              <p className="text-xs uppercase tracking-[0.18em] text-muted">Step 1 · Who is it for</p>
+              <p className="text-[13px] font-medium text-muted">Step 1 · Who is it for</p>
               <h2 className="mt-4 font-display text-[clamp(34px,8vw,56px)] leading-[0.95] tracking-tight">
                 {brand.name} sizes for {groupWord}
               </h2>
@@ -558,7 +558,7 @@ export default function BrandPage({ id }: { id: string }) {
       {/* compare */}
       <section id="compare" className="scroll-mt-16 border-t border-line">
         <div className="mx-auto max-w-[1240px] 2xl:max-w-[1400px] px-5 py-16 md:px-8 md:py-24">
-          <p className="text-xs uppercase tracking-[0.18em] text-muted">Step 2 · Compare</p>
+          <p className="text-[13px] font-medium text-muted">Step 2 · Compare</p>
           <h2 className="mt-4 max-w-[820px] font-display text-[clamp(34px,8vw,56px)] leading-[0.95] tracking-tight">
             Wear another brand? Find your {brand.name} size.
           </h2>

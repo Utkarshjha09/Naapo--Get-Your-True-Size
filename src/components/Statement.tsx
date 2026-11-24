@@ -51,7 +51,7 @@ function Word({
   accent: boolean
 }) {
   // rest: #857d70 reads about 4:1 on the paper ground
-  const color = useTransform(progress, range, ['#857d70', accent ? '#7b2d22' : '#1b1916'])
+  const color = useTransform(progress, range, ['#8a8780', accent ? '#b8321d' : '#2b2a27'])
   return (
     <>
       <m.span style={{ color }}>{children}</m.span>{' '}

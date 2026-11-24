@@ -37,7 +37,7 @@ export function HeroDemo() {
             <SlideText value={String(bust)} order={bust} />
             <span className="ml-1 font-sans text-sm text-muted">cm</span>
           </p>
-          <p className="text-xs uppercase leading-snug tracking-[0.14em] text-muted">
+          <p className="text-[13px] leading-snug font-medium text-muted">
             Bust
             <br />
             Women's tops

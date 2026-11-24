@@ -63,11 +63,11 @@ function Hero() {
       <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-12 xl:gap-16">
         <div>
           <span className="block overflow-hidden">
-            <motion.p {...line(0)} className="text-xs uppercase tracking-[0.18em] text-muted">
+            <motion.p {...line(0)} className="text-[13px] font-medium text-muted">
               Size comparison for {BRANDS.length} brands
             </motion.p>
           </span>
-          <h1 className="mt-6 font-display text-[clamp(52px,14vw,104px)] leading-[0.92] tracking-[-0.02em] lg:text-[clamp(64px,7.4vw,124px)]">
+          <h1 className="mt-6 font-display text-[clamp(52px,14vw,104px)] font-black leading-[0.88] tracking-[-0.045em] [font-stretch:75%] [word-spacing:0.08em] lg:text-[clamp(64px,7.4vw,124px)]">
             <span className="block overflow-hidden pb-[0.06em]">
               <motion.span {...line(1)} className="block">
                 Same you,
@@ -157,7 +157,7 @@ function CategoryTiles({ onPick }: { onPick: (c: Category) => void }) {
         </p>
       </div>
       <div className="grid grid-cols-2 gap-x-3 gap-y-10 md:grid-cols-4 md:gap-x-4">
-        {TILES.map((t, i) => {
+        {TILES.map((t) => {
           const c = categoryInfo(t.photo)
           return (
             <div key={t.title} className="group">
@@ -179,7 +179,7 @@ function CategoryTiles({ onPick }: { onPick: (c: Category) => void }) {
                 </div>
                 <div className="mt-4 flex items-baseline justify-between">
                   <span className="link-underline font-display text-[28px] leading-none">{t.title}</span>
-                  <span aria-hidden className="text-xs tabular-nums text-muted">0{i + 1}</span>
+                  
                 </div>
               </button>
               {t.groups.length > 1 ? (
@@ -233,7 +233,7 @@ function BrandGrid() {
       <div className="mx-auto max-w-[1240px] 2xl:max-w-[1400px] px-5 py-20 md:px-8 md:py-28">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="text-xs uppercase tracking-[0.18em] text-muted">{BRANDS.length} brands</p>
+            <p className="text-[13px] font-medium text-muted">{BRANDS.length} brands</p>
             <h2 className="mt-4 font-display text-[44px] leading-[0.95] tracking-tight md:text-[64px]">
               Every chart, one brand at a time
             </h2>
@@ -405,7 +405,7 @@ function Finder({
   return (
     <section id="finder" className="scroll-mt-16 border-t border-line bg-cream">
       <div className="mx-auto max-w-[1240px] 2xl:max-w-[1400px] px-5 py-20 md:px-8 md:py-28">
-        <p className="text-xs uppercase tracking-[0.18em] text-muted">Size finder</p>
+        <p className="text-[13px] font-medium text-muted">Size finder</p>
         <h2 className="mt-4 font-display text-[44px] leading-[0.95] tracking-tight md:text-[64px]">Find your size</h2>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[340px_1fr] lg:gap-10 xl:grid-cols-[400px_1fr] xl:gap-14">
@@ -434,7 +434,7 @@ function Finder({
               {mode === 'measure' ? (
                 <div>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs uppercase tracking-[0.14em] text-muted">{measure.label}</span>
+                    <span className="text-[13px] font-medium text-muted">{measure.label}</span>
                     <UnitToggle unit={unit} setUnit={setUnit} />
                   </div>
                   <div className="mt-3 flex items-center justify-between gap-4">
@@ -628,7 +628,7 @@ function Charts({ state }: { state: FinderState }) {
     <section id="charts" className="mx-auto max-w-[1240px] 2xl:max-w-[1400px] scroll-mt-16 px-5 py-20 md:px-8 md:py-28">
       <div className="grid gap-8 xl:grid-cols-[1fr_460px] xl:items-start">
         <div>
-          <p className="text-xs uppercase tracking-[0.18em] text-muted">Side by side</p>
+          <p className="text-[13px] font-medium text-muted">Side by side</p>
           <h2 className="mt-4 font-display text-[44px] leading-[0.95] tracking-tight md:text-[64px]">Size charts</h2>
           <p className="mt-4 max-w-[460px] text-[15px] text-muted">
             {isShoe
@@ -737,7 +737,7 @@ function Guide() {
       <div className="mx-auto max-w-[1240px] 2xl:max-w-[1400px] px-5 py-20 md:px-8 md:py-28">
         <div className="flex flex-wrap items-end justify-between gap-8">
           <div>
-            <p className="text-xs uppercase tracking-[0.18em] text-paper/60">Guide</p>
+            <p className="text-[13px] font-medium text-paper/60">Guide</p>
             <h2 className="mt-4 font-display text-[44px] leading-[0.95] tracking-tight md:text-[64px]">How to measure</h2>
           </div>
           <ActionLink href="/#finder" dark={false} />
@@ -745,8 +745,7 @@ function Guide() {
         <div className="mt-14 grid gap-px overflow-hidden rounded-[10px] bg-paper/15 sm:grid-cols-2 lg:grid-cols-4">
           {items.map(([t, d], i) => (
             <div key={t} className="bg-ink p-6 md:p-8">
-              <p className="text-xs tabular-nums text-paper/50">0{i + 1}</p>
-              <MeasureGlyph kind={i} />
+                            <MeasureGlyph kind={i} />
               <p className="mt-8 font-display text-[28px] leading-none">{t}</p>
               <p className="mt-4 text-[15px] leading-relaxed text-paper/70">{d}</p>
             </div>
@@ -811,8 +810,10 @@ function HowItWorks() {
         <ol className="grid gap-10 sm:grid-cols-3">
           {steps.map(([t, d], i) => (
             <li key={t}>
-              <p aria-hidden className="font-display text-[56px] leading-none text-[#958a77]">0{i + 1}</p>
-              <p className="mt-6 text-[17px] font-medium">{t}</p>
+              <p className="border-t-2 border-ink pt-4 text-[17px] font-medium">
+                <span className="mr-2 tabular-nums text-muted">{i + 1}.</span>
+                {t}
+              </p>
               <p className="mt-2 text-[15px] leading-relaxed text-muted">{d}</p>
             </li>
           ))}
@@ -852,7 +853,7 @@ function CloseBand() {
         still
       )}
       <div className="relative mx-auto flex min-h-[72svh] max-w-[1240px] 2xl:max-w-[1400px] flex-col justify-center px-5 py-24 md:px-8">
-        <p className="text-xs uppercase tracking-[0.18em] text-paper/70">One number, {BRANDS.length} brands</p>
+        <p className="text-[13px] font-medium text-paper/70">One number, {BRANDS.length} brands</p>
         <h2 className="mt-5 max-w-[720px] font-display text-[clamp(48px,12vw,96px)] leading-[0.92] tracking-[-0.02em]">
           Measure once, <em>shop anywhere.</em>
         </h2>
