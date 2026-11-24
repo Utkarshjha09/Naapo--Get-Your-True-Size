@@ -1,16 +1,16 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-paper: #f6f3ed;
-  --color-cream: #efe9df;
-  --color-sand: #e5ddcf;
-  --color-line: #d8cfc0;
-  --color-ink: #1b1916;
-  --color-muted: #5f584e;
-  --color-oxblood: #7b2d22;
+  --color-paper: #f4f3ef;
+  --color-cream: #eae8e2;
+  --color-sand: #dfdcd4;
+  --color-line: #d3cfc6;
+  --color-ink: #2b2a27;
+  --color-muted: #5b5852;
+  --color-oxblood: #b8321d;
   --color-olive: #4f5a36;
-  --font-display: 'Instrument Serif', Georgia, serif;
-  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Archivo Variable', 'Arial Narrow', ui-sans-serif, sans-serif;
+  --font-sans: 'Geist Variable', ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -55,6 +55,19 @@
   }
   em {
     font-style: italic;
+  }
+  /* headlines: heavy, slightly condensed, tight. Accent words keep the colour but stay upright */
+  .font-display {
+    font-weight: 700;
+    font-stretch: 85%;
+    letter-spacing: -0.035em;
+  }
+  .font-display em,
+  .font-display.not-italic {
+    font-style: normal;
+  }
+  body {
+    letter-spacing: -0.005em;
   }
 }
 

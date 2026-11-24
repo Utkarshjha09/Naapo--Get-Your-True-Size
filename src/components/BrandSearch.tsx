@@ -173,7 +173,7 @@ function SearchDialog({ onClose }: { onClose: () => void }) {
             Close
           </button>
         </div>
-        <p className="px-4 pb-1 pt-3 text-[11px] uppercase tracking-[0.14em] text-muted sm:px-5">
+        <p className="px-4 pb-1 pt-3 text-[12px] font-medium text-muted sm:px-5">
           {q.trim() ? `${results.length} ${results.length === 1 ? 'brand' : 'brands'}` : 'Popular in India'}
         </p>
         <ul ref={list} id="brand-results" role="listbox" data-lenis-prevent className="overflow-y-auto px-2 pb-3 sm:px-3">

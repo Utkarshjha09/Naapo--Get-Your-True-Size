@@ -49,11 +49,11 @@ export function Field({ label, children, htmlFor }: { label: string; children: R
   return (
     <div>
       {htmlFor ? (
-        <label htmlFor={htmlFor} className="mb-3 block text-xs uppercase tracking-[0.14em] text-muted">
+        <label htmlFor={htmlFor} className="mb-3 block text-[13px] font-medium text-muted">
           {label}
         </label>
       ) : (
-        <p className="mb-3 text-xs uppercase tracking-[0.14em] text-muted">{label}</p>
+        <p className="mb-3 text-[13px] font-medium text-muted">{label}</p>
       )}
       {children}
     </div>
@@ -200,7 +200,7 @@ export function Footer() {
             <p className="mt-6 text-muted">Same you, every brand.</p>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.14em] text-muted">Shop by</p>
+            <p className="text-[13px] font-medium text-muted">Shop by</p>
             <ul className="mt-4 grid grid-cols-2 gap-x-4 lg:grid-cols-1">
               {CATEGORIES.map((c) => (
                 <li key={c.id}>
@@ -212,7 +212,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.14em] text-muted">Brands</p>
+            <p className="text-[13px] font-medium text-muted">Brands</p>
             <ul className="mt-4 grid grid-cols-2 gap-x-4">
               {FOOTER_BRANDS.map((id) => BRANDS.find((b) => b.id === id)!).map((b) => (
                 <li key={b.id}>
@@ -229,7 +229,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.14em] text-muted">Contact</p>
+            <p className="text-[13px] font-medium text-muted">Contact</p>
             <p className="mt-4 max-w-[300px] text-[15px] leading-relaxed text-muted">
               naapo is part of Trivasite. Questions, a brand to add, or working together: reach the team there.
             </p>
